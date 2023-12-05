@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +12,15 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Movement Calculation
         _rigidbody.velocity = m_movementInput * _speed;
     }
 
     private void OnMove(InputValue inputValue)
     {
         m_movementInput =  inputValue.Get<Vector2>();
+    }
+    private void OnInventory(InputValue inputValue)
+    {
+        InventoryBehaviour.Instance.OnOffInventory();
     }
 }
