@@ -23,4 +23,5 @@ public class PlayerBehaviour : MonoBehaviour
     {
         InventoryBehaviour.Instance.OnOffInventory();
     }
+
 }

@@ -10,9 +10,14 @@ public class CurrencyController : MonoBehaviour
     {
         DisplayCurrency();
     }
-
+    private void FixedUpdate()
+    {
+        if (Currency.CheckUI())
+            DisplayCurrency();
+    }
     public void DisplayCurrency()
     {
         _currencyDisplayer.text = "$" + Currency.CheckMoney();
+        Currency.UiReset();
     }
 }
