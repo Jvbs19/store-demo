@@ -28,7 +28,6 @@ public class ItemBehaviour : InteractiveAction
             default:
                 break;
         }
-     
     }
     void PickItem()
     {

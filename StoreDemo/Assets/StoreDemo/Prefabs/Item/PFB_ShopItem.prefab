@@ -230,8 +230,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -396,7 +396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1440054318192924331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7238577840638731003}
+        m_TargetAssemblyTypeName: ItemContentBehaviour, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7238577840638731003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemIcon: {fileID: 1440054318855383921}
   _itemName: {fileID: 1440054317275183093}
+  _itemPrice: {fileID: 5553660490658839216}
+  _options: {fileID: 0}
 --- !u!1 &1440054318855383927
 GameObject:
   m_ObjectHideFlags: 0

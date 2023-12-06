@@ -25,6 +25,16 @@ public class ShopBehaviour : MonoBehaviour
     {
         _shopItems.Remove(item);
     }
+    public void BuyItem(Item item)
+    {
+        AddItem(item);
+        DisplayShopItems();
+    }
+    public void SellItem(Item item)
+    {
+        RemoveItem(item);
+        DisplayShopItems();
+    }
     public void DisplayShopItems()
     {
         foreach (Transform item in _itensContent)
@@ -36,22 +46,10 @@ public class ShopBehaviour : MonoBehaviour
             GameObject obj = Instantiate(_intentoryItem, _itensContent);
 
             ItemContentBehaviour itn = obj.GetComponent<ItemContentBehaviour>();
-            itn.ItemSetup(item.m_name, item.m_icon);
+            itn.LinkShop(this);
+            itn.LinkItem(item);
+            itn.ShopItemSetup(item.m_name,item.m_price, item.m_icon);
         }
     }
-    public void BuyItem(Item item)
-    {
-        if (item.m_price > Currency.CheckMoney())
-            return;
 
-        Currency.CalculateMoney(-item.m_price);
-        InventoryBehaviour.Instance.AddItem(item);
-        RemoveItem(item);
-    }
-    public void SellItem(Item item)
-    {
-        Currency.CalculateMoney(+item.m_price);
-        AddItem(item);
-        InventoryBehaviour.Instance.RemoveItem(item);
-    }
 }

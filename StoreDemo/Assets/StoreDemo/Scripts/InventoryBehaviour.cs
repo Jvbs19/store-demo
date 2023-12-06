@@ -46,6 +46,8 @@ public class InventoryBehaviour : MonoBehaviour
             GameObject obj = Instantiate(_intentoryItem, _itensContent);
 
             ItemContentBehaviour itn = obj.GetComponent<ItemContentBehaviour>();
+
+            itn.LinkItem(item);
             itn.ItemSetup(item.m_name, item.m_icon);
         }
     }
