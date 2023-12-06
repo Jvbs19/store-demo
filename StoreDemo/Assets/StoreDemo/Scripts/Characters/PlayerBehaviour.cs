@@ -23,5 +23,9 @@ public class PlayerBehaviour : MonoBehaviour
     {
         InventoryBehaviour.Instance.OnOffInventory();
     }
+    private void OnQuit(InputValue inputValue)
+    {
+        Application.Quit();
+    }
 
 }
